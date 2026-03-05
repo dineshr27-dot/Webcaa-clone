@@ -127,45 +127,131 @@ a{
         padding: 8px 15px;
     }
 }
-/* hide checkbox */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* Header */
+.header{
+width:100%;
+background:#ffffff;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 25px;
+position:relative;
+}
+
+/* Logo */
+.i1 img{
+width:40px;
+}
+
+nav h1{
+font-size:22px;
+color:#0b2a50;
+margin-left:10px;
+flex:1;
+}
+
+/* Menu Links */
+.li{
+display:flex;
+gap:25px;
+}
+
+.li a{
+text-decoration:none;
+color:#333;
+font-size:16px;
+}
+
+.li a:hover{
+color:#0b2a50;
+}
+
+/* Button */
+.bt .b1{
+padding:10px 20px;
+background:#0b2a50;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* Hide checkbox */
 #menu-toggle{
 display:none;
 }
 
-/* hamburger icon */
+/* Hamburger icon */
 .menu-icon{
-display:none;
 font-size:28px;
 cursor:pointer;
+display:none;
 }
 
-/* Desktop menu */
-.li{
-display:flex;
-gap:20px;
+/* Mobile Styles */
+@media(max-width:768px){
+
+nav{
+flex-wrap:wrap;
 }
 
-/* MOBILE */
-@media (max-width:768px){
-
+/* show hamburger */
 .menu-icon{
 display:block;
 }
 
+/* hide menu initially */
 .li{
-display:none;
 position:absolute;
 top:70px;
 left:0;
 width:100%;
 background:#f2f2f2;
 flex-direction:column;
+align-items:flex-start;
 padding:20px;
+display:none;
+}
+
+.li a{
+padding:12px 0;
+font-size:18px;
+width:100%;
 }
 
 /* show menu when clicked */
 #menu-toggle:checked ~ .li{
 display:flex;
+}
+
+/* button inside mobile menu */
+.bt{
+width:100%;
+padding:20px;
+background:#f2f2f2;
+display:none;
+}
+
+#menu-toggle:checked ~ .bt{
+display:block;
+}
+
+.bt .b1{
+width:100%;
+padding:15px;
+font-size:16px;
 }
 
 }
