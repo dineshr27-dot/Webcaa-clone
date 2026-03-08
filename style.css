@@ -147,6 +147,98 @@ display:none;
 font-size:26px;
 cursor:pointer;
 }
+/* Hide checkbox */
+#menu-toggle{
+display:none;
+}
+
+/* Hamburger icon */
+.menu-icon{
+font-size:28px;
+cursor:pointer;
+display:none;
+}
+
+/* Mobile menu overlay */
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+/* Menu panel */
+.menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:auto;
+background:white;
+padding:20px;
+flex-direction:column;
+display:none;
+z-index:1000;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+#menu-toggle:checked + .menu-icon::before{
+content:"✕";
+}
+
+/* Show menu */
+#menu-toggle:checked ~ .menu{
+display:flex;
+}
+
+/* Links container */
+.li{
+flex-direction:column;
+width:100%;
+margin-top:15px;
+}
+
+/* Links */
+.li a{
+display:block;
+padding:14px;
+font-size:18px;
+color:#333;
+border-radius:6px;
+text-decoration:none;
+}
+
+/* Active link background */
+.li a.active{
+background:#f0f0f0;
+}
+
+/* Divider */
+.li::before{
+content:"";
+display:block;
+height:1px;
+background:#e5e5e5;
+margin-bottom:15px;
+}
+
+/* Button container */
+.bt{
+width:100%;
+margin-top:20px;
+}
+
+/* Button */
+.b1{
+width:100%;
+padding:14px;
+font-size:16px;
+background:#0b234d;
+color:white;
+border:none;
+border-radius:10px;
+}
+
+}
 
 /* MOBILE */
 @media (max-width:768px){
