@@ -1,133 +1,4 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-.header{
-
-
-}
-nav{
-    padding:15px 40px;
-    display: flex;
-    align-items: center;
-}
-h1{
-    margin-left: 125px;
-    cursor: pointer;
-    font-size: 25px;
-    padding-right: 50px;
-    font-weight: bold;
-}
-
-.b1{
-    display: block;
-    color: white;
-    cursor: pointer;
-    background-color: #020240;
-    padding: 8px 16px;
-    border-radius: 8px;
-    padding-left: 20px;
-    display: inline-block;
-    font-size: 15px;
-
-}
-.bt{
-    padding-left: 220px;
-}
-img{
-    width:40px;
-    height: 40px;
-    cursor: pointer;
-    margin-left: 20px;
-    display: inline-block;
-    position: relative;
-    left: 100px;
-
-}
-/*
-.i1{
-
-
-}
-*/
-
-/*
-body {
-    background: #f8f9fc;
-}
-*/
-
-a{
-    padding-left: 25px;
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
-    font-style:initial;
-    font-weight: bold;
-}
-.li{
-    padding-left: 60px;
-}
-.s2{
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        padding: 10px 20px;
-    }
-
-    h1 {
-        margin-left: 0;
-        font-size: 20px;
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .bt {
-        padding-left: 0;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    img {
-        left: 0;
-        margin: 10px auto;
-        display: block;
-    }
-
-    a {
-        display: block;
-        padding: 10px 0;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    .b1 {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-
-    nav {
-        padding: 8px 15px;
-    }
-}
-*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -138,31 +9,46 @@ font-family:Arial, sans-serif;
 .header{
 width:100%;
 background:#ffffff;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Navbar */
-nav{
+.navbar{
+max-width:1200px;
+margin:auto;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 25px;
+padding:15px 20px;
 position:relative;
 }
 
 /* Logo */
-.i1 img{
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
 width:40px;
+height:40px;
 }
 
-nav h1{
+.logo h1{
 font-size:22px;
-color:#0b2a50;
-margin-left:10px;
-flex:1;
+font-weight:bold;
+color:#0b234d;
 }
 
-/* Menu Links */
+/* Menu container */
+.menu{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+/* Links */
 .li{
 display:flex;
 gap:25px;
@@ -171,21 +57,23 @@ gap:25px;
 .li a{
 text-decoration:none;
 color:#333;
-font-size:16px;
+font-size:14px;
+font-weight:600;
 }
 
 .li a:hover{
-color:#0b2a50;
+color:#0b234d;
 }
 
 /* Button */
-.bt .b1{
-padding:10px 20px;
-background:#0b2a50;
+.b1{
+background:#0b234d;
 color:white;
+padding:8px 18px;
+border-radius:8px;
 border:none;
-border-radius:6px;
 cursor:pointer;
+font-size:14px;
 }
 
 /* Hide checkbox */
@@ -193,77 +81,53 @@ cursor:pointer;
 display:none;
 }
 
-/* Hamburger icon */
+/* Hamburger */
 .menu-icon{
-font-size:28px;
-cursor:pointer;
 display:none;
+font-size:26px;
+cursor:pointer;
 }
 
-/* Mobile Styles */
-@media(max-width:768px){
+/* ===== Mobile ===== */
 
-nav{
-flex-wrap:wrap;
-}
+@media (max-width:768px){
 
-/* show hamburger */
 .menu-icon{
 display:block;
 }
 
-/* hide menu initially */
-.li{
+.menu{
 position:absolute;
 top:70px;
 left:0;
 width:100%;
-background:#f2f2f2;
+background:white;
 flex-direction:column;
-align-items:flex-start;
-padding:20px;
+align-items:center;
+gap:20px;
+padding:25px;
 display:none;
 }
 
-.li a{
-padding:12px 0;
-font-size:18px;
-width:100%;
+.li{
+flex-direction:column;
+align-items:center;
+gap:15px;
 }
 
-/* show menu when clicked */
-#menu-toggle:checked ~ .li{
+.bt{
+margin-top:10px;
+}
+
+#menu-toggle:checked ~ .menu{
 display:flex;
 }
 
-/* button inside mobile menu */
-.bt{
-width:100%;
-padding:20px;
-background:#f2f2f2;
-display:none;
-}
-
-#menu-toggle:checked ~ .bt{
-display:block;
-}
-
-.bt .b1{
-width:100%;
-padding:15px;
-font-size:16px;
+.logo h1{
+font-size:18px;
 }
 
 }
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
 /* HERO BACKGROUND */
 .hero {
   min-height: 100vh;
